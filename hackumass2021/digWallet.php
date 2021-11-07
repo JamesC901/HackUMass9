@@ -18,7 +18,7 @@
         <a class="btn btn-primary" href=" http://localhost/hackumass2021/DigWallet/login.html" role="button">Log out</a>
         <a class="btn btn-primary" style="margin: 25px;" href=" http://localhost/hackumass2021/DigWallet/profile.html" role="button">Profile</a>
         <a class="btn btn-primary" href="view.php" role="button">Stored</a>
-        <a class="btn btn-primary" href="http://localhost/DigWallet/digQR.html" role="button">digQR</a>
+        <a class="btn btn-primary" style="margin: 25px;" href="http://localhost/DigWallet/digQR.html"  role="button">digQR</a>
     </header>
     <body>
 
