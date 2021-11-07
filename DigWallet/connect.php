@@ -1,34 +1,51 @@
 <?php
-    $username = $_POST['username']
-    $password = $_POST['password']
+
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $sname = "hackumass2021.cmurgkgmoz2q.us-east-1.rds.amazonaws.com";
+    $uname = "admin";
+    $cpassword = "949567421";
+    $db_name = "hackathon";
 
     if(!empty($username) || !empty($password)){
 
-        $conn = new mysqli('hackumass2021.cmurgkgmoz2q.us-east-1.rds.amazonaws.com','admin''949567421','login')
-        if(mysqli_connect_error()){
-            die('Connect Error('. mysqli_connect_errno().')'. mysqli_connect_error());
-        } else {
-            $SELECT = "SELECT email From register Where email = ? Limit 1"; 
-            $INSERT = "INSERT Into register (username, password) values(?,?)";
-            
-            $stmt = $conn->prepare($SELECT);
-            $stmt->bind_param("s", $username);
-            $stmt->execute();
-            $stmt->bind_result($username);
-            $stmt->store_result();
-            $rnum = $stmt ->num_rows;
+        $conn = mysqli_connect($sname, $uname, $cpassword, $db_name, 4306);
+        if (!$conn) {
+            echo "Connection failed!";
+            exit();
+        }
+         else {
 
-            if($rnum==0){
-                $stmt->close();
+            $INSERT = "INSERT Into login (username, password) values(?,?)";
+    
+            $SELECT = "Select count(*) as count from login WHERE login.username = '{$username}'";
+
+            $query = mysqli_query($conn, $SELECT);
+
+            $result = mysqli_fetch_array($query);
+
+            $count = $result['count'];
+
+            if($count == 0){
+
 
                 $stmt = $conn->prepare($INSERT);
-                $stmt->bind-param("ss",$username,$password);
+
+                if($stmt == false){
+                    echo mysqli_error($conn);
+                    exit();
+                }
+
+
+                $stmt->bind_param('ss',$username,$password);
                 $stmt->execute();
-                echo "New user register";
+                header('Location: http://localhost/DigWallet/login.html');
+                $stmt->close();
             } else {
                 echo "Someone already has this username";
             }
-            $stmt->close();
+            
             $conn->close();
         }
     } else{

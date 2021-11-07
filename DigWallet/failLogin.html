@@ -11,15 +11,16 @@
         <div class="wrapper fadeInDown">
           <div id="formContent">
             <h1 class="centertitle">DigitalCard</h1>
+            <h2 class="centertitle" style="color:orangered;">Wrong password/Username</h2>
             <!-- Tabs Titles -->
         
             <!-- Icon -->
             <h3 class="fadeIn second">Log In</h3>
         
-            <!-- Login Form --> 
-            <form action="login.php" method="post">
-              <input type="text" id="Username" class="fadeIn second" name="Username" required placeholder="Username">
-              <input type="password" id="Password" class="fadeIn third" name="Password" required placeholder="Password">
+            <!-- Login Form -->
+            <form action="login.php" method="POST">
+              <input type="text" id="login" class="fadeIn second" name="Username" placeholder="Username">
+              <input type="password" id="password" class="fadeIn third" name="Password" placeholder="Password">
               <input type="submit" class="fadeIn fourth" value="Log In">
             </form>
             <form>
