@@ -18,9 +18,13 @@
         <h1 class="centertitle">DigitalCard</h1>
         <div>
             <form>
-                <input class="input" type="text" placeholder="Please enter a url link for a picture">
+                <input id="upload" class="input" type="text" placeholder="Please enter a url link for a picture">
             </form>
-            <button class="btn btn-success">Upload</button>
+            <button id="uploadbtn" class="btn btn-success">Upload</button>
         </div>
+        <div class="wrapper fadeInDown">
+            <img id="QRcode" class="fadeIn first"/>
+        </div>
+    <script src="digGen.js"></script>
     </body>
 </html>
