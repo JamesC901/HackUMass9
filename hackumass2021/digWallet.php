@@ -24,12 +24,12 @@
             <input type="file" name="my_image">
             <input type="submit" name="submit" value="Upload">
         </form>
-            <button id="uploadbtn" class="btn btn-success">Generate QR Code</button>
+<!--             <button id="uploadbtn" class="btn btn-success">Generate QR Code</button>
         </div>
         <div class="wrapper fadeInDown">
             <img id="QRcode" class="fadeIn first"/>
         </div>
-    <script src="digGen.js"></script>
+    <script src="digGen.js"></script> -->
     </body>
 </html>
 
