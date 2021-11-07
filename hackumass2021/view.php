@@ -6,7 +6,6 @@
 	<title>View</title>
 	<style>
 		body {
-			background: ;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -27,9 +26,10 @@
 			color: black;
 		}
 	</style>
+
 </head>
 <body>
-     <a href="index.php">&#8592;</a>
+     <a href="digWallet.php">&#8592;</a>
      <?php 
           $sql = "SELECT * FROM images ORDER BY id DESC";
           $res = mysqli_query($conn,  $sql);
